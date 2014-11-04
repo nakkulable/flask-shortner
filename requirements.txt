@@ -10,3 +10,4 @@ redis==2.10.2
 requests==2.3.0
 ua-parser==0.3.5
 wsgiref==0.1.2
+gunicorn==17.5
