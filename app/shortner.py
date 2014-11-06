@@ -2,6 +2,7 @@ import redis
 import base64
 import md5
 import config
+import urlparse
 
 
 class UrlShortener:
