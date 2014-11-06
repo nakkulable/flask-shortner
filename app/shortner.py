@@ -6,9 +6,12 @@ import config
 
 class UrlShortener:
     def __init__(self):
-        self.redis = redis.StrictRedis(host=config.REDIS_HOST,
-                                       port=config.REDIS_PORT,
-                                       db=config.REDIS_DB)
+        url = urlparse.urlparse(os.environ.get('REDISCLOUD_URL'))
+        self.redis = redis.Redis(host=url.hostname, port=url.port,
+                                 password=url.password)
+        # self.redis = redis.StrictRedis(host=config.REDIS_HOST,
+        #                                port=config.REDIS_PORT,
+        #                                db=config.REDIS_DB)
 
     def shortcode(self, url):
         """
