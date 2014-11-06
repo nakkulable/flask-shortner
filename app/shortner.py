@@ -3,6 +3,7 @@ import base64
 import md5
 import config
 import urlparse
+import os
 
 
 class UrlShortener:
